@@ -56,3 +56,8 @@ Integrate Prometheus and Grafana for monitoring.
 Monitoring setup instructions
 Sample Grafana dashboard screenshot
 Logging configuration
+
+
+**Basic Flow**:
+
+Code is dockerized Flask app and then connects to Postgres using secrets/config → deployed in Kubernetes with 2 replicas, probes, logging sidecar, init container, RBAC, and exposed using NodePort. DB is deployed separately, app waits for DB before boot. Logs are tailed by a sidecar. PDB ensures HA.
