@@ -1,0 +1,5 @@
+kubectl exec -it <postgres-pod-name> -- bash
+psql -U flaskuser -d flaskdb
+select now();
+
+\q
