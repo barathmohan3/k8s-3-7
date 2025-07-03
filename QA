@@ -1,0 +1,15 @@
+Q: Why did kubectl port-forward fail initially?
+A: Because the Kubernetes API server was unreachable—Minikube wasn't running.
+
+Q: What does RSRC_DOCKER_STORAGE mean?
+A: Docker couldn't start Minikube due to insufficient disk space in /var.
+
+Q: How do I clean up Docker space safely?
+A: Use docker system prune -a --volumes to remove unused containers, images, and volumes.
+
+Q: How can I check which folders are using the most space?
+A: Run sudo du -h / --max-depth=2 | sort -hr | head -20.
+
+Q: What should I do if Minikube still fails after cleanup?
+A: Ensure enough space is available in /, /var, and /home, then restart Minikube.
+
